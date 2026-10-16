@@ -1,67 +1,168 @@
 
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Official Membership</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px #cccccc;
-    }
-    h1 {
-      text-align: center;
-      color: #087443;
-    }
-    input, textarea, button {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      background: #087443;
-      color: white;
-      border: none;
-      font-size: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b2d">
+<title>Thailand Lottery Information Portal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f6f2;color:#19352a;font-family:Arial,sans-serif;line-height:1.6}
+header{background:#123b2d;color:white;text-align:center;padding:24px 15px;border-bottom:4px solid #e7c56b}
+header h1{margin:0;font-size:clamp(23px,5vw,34px)}
+header p{color:#e7c56b;margin:6px 0 0}
+nav{background:#0b291f;text-align:center;padding:13px 6px}
+nav a{color:white;text-decoration:none;margin:0 9px;font-size:13px;display:inline-block}
+nav a:hover{color:#e7c56b}
+main{max-width:900px;margin:24px auto;padding:0 14px}
+.hero{background:linear-gradient(130deg,#123b2d,#246044);color:white;border-radius:18px;padding:30px 24px;margin-bottom:20px}
+.hero h2{font-size:clamp(24px,5vw,36px);line-height:1.2}
+.hero p{color:#e1ebe4}
+.card{background:white;border:1px solid #e2e8e1;border-radius:15px;padding:23px;margin-bottom:17px;box-shadow:0 4px 15px #00000008}
+.card h2{margin-top:0;font-size:22px}
+.button{display:inline-block;border:0;border-radius:9px;padding:12px 17px;background:#e7c56b;color:#17372a;text-decoration:none;font-weight:bold;cursor:pointer}
+.green{background:#174d37;color:white}
+.membership{border:2px solid #e7c56b}
+.note{background:#fff8e4;border:1px solid #efdfb2;border-radius:10px;padding:13px;font-size:13px;color:#594a20}
+.muted{font-size:13px;color:#68766d}
+footer{background:#0b291f;color:white;text-align:center;padding:23px 12px;font-size:13px}
+footer a{color:#e7c56b}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:10;overflow:auto;padding:15px}
+.modal.show{display:block}
+.dialog{max-width:600px;background:white;border-radius:15px;padding:23px;margin:25px auto}
+.dialoghead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.dialoghead h2{margin:0}
+.close{font-size:25px;border:0;background:#edf1ed;border-radius:8px;padding:3px 12px;cursor:pointer}
+form{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}
+.field{display:flex;flex-direction:column;gap:5px}
+.full{grid-column:1/-1}
+label{font-size:13px;font-weight:bold}
+input,textarea{font:inherit;width:100%;padding:11px;border:1px solid #d5ddd5;border-radius:8px}
+textarea{min-height:75px}
+@media(max-width:560px){form{grid-template-columns:1fr}.full{grid-column:auto}.card{padding:18px}.hero{padding:24px 19px}nav a{margin:4px}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Membership Application</h1>
-    <p>Membership Registration Form</p>
-    <form>
-      <label>Full Name</label>
-      <input type="text" placeholder="Enter your full name" required>
+<header>
+<h1>THAILAND LOTTERY INFO</h1>
+<p>Results • Draw Information • Membership</p>
+</header>
 
-      <label>Passport Number</label>
-      <input type="text" placeholder="Passport number" required>
+<nav>
+<a href="#home">Home</a>
+<a href="#results">Official Results</a>
+<a href="#draw">Draw Information</a>
+<a href="#history">Past Results</a>
+<a href="#membership">Membership</a>
+</nav>
 
-      <label>Email Address</label>
-      <input type="email" placeholder="Enter your email" required>
+<main id="home">
+<section class="hero">
+<p>LOTTERY INFORMATION PORTAL</p>
+<h2>Thailand Government Lottery Information</h2>
+<p>Find official lottery results, draw announcements and historical data through the Thailand Government Lottery Office (GLO).</p>
+<a class="button" href="https://www.glo.or.th/mission/awarding/orderby-time" target="_blank" rel="noopener">View Official Results ↗</a>
+</section>
 
-      <label>Address</label>
-      <textarea placeholder="Enter your address" required></textarea>
+<section class="card" id="results">
+<h2>Official Lottery Results</h2>
+<p>For the latest published result, check the Government Lottery Office directly.</p>
+<a class="button green" href="https://www.glo.or.th/mission/awarding/orderby-time" target="_blank" rel="noopener">Check Results ↗</a>
+</section>
 
-      <label>Upload Photo</label>
-      <input type="file" accept="image/*">
+<section class="card" id="draw">
+<h2>Draw Dates & Official Announcements</h2>
+<p>Confirm the upcoming draw date and any schedule changes using official announcements.</p>
+<a class="button green" href="https://www.glo.or.th/" target="_blank" rel="noopener">GLO Official Website ↗</a>
+<p class="muted">This page does not independently confirm or automatically update upcoming draw dates.</p>
+</section>
 
-      <button type="submit">Submit Application</button>
-    </form>
-  </div>
+<section class="card" id="history">
+<h2>Historical Results & Open Data</h2>
+<p>Explore the official public data catalogue for available historical lottery results and datasets.</p>
+<a class="button green" href="https://gdcatalog.glo.or.th/en/dataset/dataset_c4-9_01" target="_blank" rel="noopener">Open Official Data ↗</a>
+</section>
+
+<section class="card membership" id="membership">
+<h2>Membership Application</h2>
+<p>Open the separate membership application form below. No member details are displayed on the homepage.</p>
+<button class="button" type="button" onclick="openForm()">Open Membership Form →</button>
+</section>
+
+<section class="note">
+<strong>Important notice:</strong> This is an independent information portal, not the official Government Lottery Office website. Always verify results and draw announcements at <a href="https://www.glo.or.th/" target="_blank" rel="noopener">glo.or.th</a>. This website does not claim government approval or official-agent status.
+</section>
+</main>
+
+<footer>
+<p>Thailand Lottery Information Portal</p>
+<p>Official source: <a href="https://www.glo.or.th/" target="_blank" rel="noopener">Government Lottery Office</a></p>
+<p>Independent information website</p>
+</footer>
+
+<div class="modal" id="membershipModal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+<div class="dialog">
+<div class="dialoghead">
+<h2 id="formTitle">Membership Application</h2>
+<button class="close" type="button" onclick="closeForm()" aria-label="Close">×</button>
+</div>
+<p class="muted">Application form preview. It will not send or save information until a secure submission service is connected.</p>
+
+<form id="memberForm">
+<div class="field">
+<label for="name">Full Name</label>
+<input id="name" name="name" autocomplete="name" required>
+</div>
+<div class="field">
+<label for="email">Email Address</label>
+<input id="email" name="email" type="email" autocomplete="email" required>
+</div>
+<div class="field">
+<label for="phone">Phone Number (optional)</label>
+<input id="phone" name="phone" type="tel" autocomplete="tel">
+</div>
+<div class="field">
+<label for="passport">Passport Number (optional)</label>
+<input id="passport" name="passport" autocomplete="off">
+</div>
+<div class="field full">
+<label for="address">Address (optional)</label>
+<textarea id="address" name="address"></textarea>
+</div>
+<div class="field full">
+<label for="photo">Photo (optional)</label>
+<input id="photo" name="photo" type="file" accept="image/*">
+</div>
+<div class="field full">
+<p class="muted">Privacy warning: do not submit real passport details until secure data handling is configured.</p>
+<button class="button green" type="submit">Submit Application</button>
+<p id="message" class="muted" role="status"></p>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+function openForm(){
+ document.getElementById('membershipModal').classList.add('show');
+ document.body.style.overflow='hidden';
+}
+function closeForm(){
+ document.getElementById('membershipModal').classList.remove('show');
+ document.body.style.overflow='';
+}
+document.getElementById('membershipModal').addEventListener('click',function(e){
+ if(e.target===this)closeForm();
+});
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape')closeForm();
+});
+document.getElementById('memberForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ document.getElementById('message').textContent=
+ 'Demo only: no application has been sent or saved. A secure application service must be connected first.';
+});
+</script>
 </body>
 </html>
